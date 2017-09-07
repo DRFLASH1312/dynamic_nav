@@ -15,8 +15,10 @@ class CategoriesController extends Controller
      */
     public function index()
     {
-        $categories=Category::all();
+        $categories=Category::all()->groupBy('parent_id');
 
+        $categories['root']=$categories[0];
+        unset($categories[0]);
 
         return view('admin.category.index',compact(['categories','products']));
     }

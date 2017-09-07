@@ -13,6 +13,9 @@
 
 
 Route::get('/', 'FrontController@index')->name('home');
+
+
+
 Route::get('/shirts', 'FrontController@shirts')->name('shirts');
 Route::get('/shirt', 'FrontController@shirt')->name('shirt');
 Auth::routes();
